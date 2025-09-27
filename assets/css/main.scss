@@ -39,3 +39,55 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+/* Custom styles for larger sidebar elements */
+
+/* Increase avatar size */
+.author__avatar img {
+  max-width: 200px !important; /* Increased from 175px */
+  
+  @include breakpoint($large) {
+    max-width: 200px !important; /* Even larger on desktop */
+  }
+}
+
+/* Increase author name font size */
+.sidebar .author__name {
+  font-size: 1.25em !important; /* Increased from $type-size-5 (1em) */
+  
+  @include breakpoint($large) {
+    font-size: 1.4em !important; /* Even larger on desktop */
+  }
+}
+
+/* Increase bio text font size */
+.author__bio {
+  font-size: 0.9em !important; /* Increased from $type-size-6 (0.75em) */
+  
+  @include breakpoint($large) {
+    font-size: 1em !important; /* Standard size on desktop */
+  }
+}
+
+/* Increase sidebar link font size */
+.sidebar .author__urls {
+  font-size: 1em !important; /* Increased from default */
+  
+  @include breakpoint($large) {
+    font-size: 1.1em !important; /* Even larger on desktop */
+  }
+}
+
+/* Specifically target individual links (Email, ORCID, etc.) */
+.sidebar .author__urls li a {
+  font-size: 1em !important; /* Make sure individual links are large enough */
+  
+  @include breakpoint($large) {
+    font-size: 1.1em !important;
+  }
+}
+
+/* Make sure icons are properly sized with the larger text */
+.sidebar .author__urls .icon-pad-right {
+  font-size: 1em !important;
+}

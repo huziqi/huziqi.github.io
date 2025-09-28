@@ -24,7 +24,7 @@ author:
   avatar           : "profile.png"
   name             : "Ziqi(Gabriel) Hu"
   pronouns         : # example: "she/her"  
-  bio              : "Ph.D. Student, The Hong Kong University of Science and Technology"
+  bio              : "Ph.D. Student, HKUST"
   location         : "Hong Kong SAR"
   employer         : # The Hong Kong University of Science and Technology
   uri              : "https://huziqi.github.io/"
@@ -49,13 +49,13 @@ author:
 
   # Social media
   bluesky          : # Username
-  facebook         : Ziqi Hu
+  facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
   goodreads        : # Username
   google_plus      : # Username
   keybase          : # Username
-  instagram        : ziqihu00
+  instagram        : # Username
   lastfm           : # Username
   linkedin         : Ziqi Hu
   mastodon         : # URL
@@ -234,10 +234,10 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _teaching
+  # _services
   - scope:
       path: ""
-      type: teaching
+      type: services
     values:
       layout: single
       author_profile: true

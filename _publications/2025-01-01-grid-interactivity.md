@@ -7,5 +7,5 @@ date: 2025-01-01
 venue: 'Energy Conversion and Management'
 paperurl: '/files/Optimizing building energy.pdf'
 venue_url: 'https://doi.org/10.1016/j.enconman.2025.119927'
-citation: 'Wanfu Zheng, <strong>Ziqi Hu</strong>, Dan Wang, and Zheng Wang. (2025). "Optimizing building energy systems for grid-interactivity, comfort and resilience." <i>Energy Conversion and Management</i>, 340, 119927.'
+citation: 'Wanfu Zheng, <strong>Ziqi Hu</strong>, Dan Wang, and Zheng Wang. (2025). "Optimizing building energy systems for grid-interactivity, comfort and resilience." <i>Energy Conversion and Management</i>, 340:119927.'
 ---

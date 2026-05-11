@@ -7,5 +7,7 @@ date: 2019-10-01
 venue: '2019 IEEE International Conference on Manipulation, Manufacturing and Measurement on the Nanoscale (3M-NANO)'
 paperurl: '/files/AFM.pdf'
 venue_url: 'https://ieeexplore.ieee.org/abstract/document/8947401'
+author_position: 1
+corresponding: false
 citation: '<strong>Ziqi Hu</strong>, Zhi Fan, Cunhuan Liu, Yinan Wu, and Chao Wang. (2019). "Geometrical patterns based cross-scale image registration for AFM and optical microscopy." <i>2019 IEEE International Conference on Manipulation, Manufacturing and Measurement on the Nanoscale (3M-NANO)</i>, 276-280.'
 ---

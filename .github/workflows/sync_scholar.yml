@@ -1,0 +1,37 @@
+name: Sync Google Scholar Publications
+
+on:
+  schedule:
+    # 每周一 UTC 时间 00:00 运行一次
+    - cron: "0 0 * * 1"
+  workflow_dispatch: # 允许你在 GitHub 界面手动点击运行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install dependencies
+        run: |
+          pip install scholarly python-slugify
+
+      - name: Run fetch script
+        run: python fetch_scholar.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add _publications/
+          # 只有在有新文件时才提交，防止报错
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update publications from Google Scholar" && git push)

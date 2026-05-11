@@ -12,11 +12,5 @@ main:
   - title: "Portfolio"
     url: /portfolio/
         
-  - title: "Blog"
-    url: /year-archive/
-    
   - title: "CV"
     url: /cv/
-    
-  - title: "Softwares"
-    url: /softwares/

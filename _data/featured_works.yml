@@ -4,25 +4,24 @@
 - title: "AutoControl: An end-to-end fully automated workflow for control design of building energy systems"
   category: "BUILDING CONTROL"
   description: "This paper presents AutoControl, a comprehensive automated workflow for designing control systems in building energy applications."
-  image: "autocontrol.png"  # 临时占位图片，请替换为实际项目图片
+  image: "autocontrol.png" # 临时占位图片，请替换为实际项目图片
   date: "Sep 16, 2025"
-  url: "/publication/2025-02-01-autocontrol"
+  url: "/portfolio/autocontrol/"
   external: false
   tags: ["Building Control", "Automation", "Energy Systems"]
-  demo_url: ""  # 如果有在线演示链接
-  code_url: ""  # 如果有源代码链接
+  demo_url: "" # 如果有在线演示链接
+  code_url: "" # 如果有源代码链接
 
 - title: "NALO-VOM: Navigation-oriented LiDAR-guided monocular visual odometry and mapping for unmanned ground vehicles"
   category: "ROBOTICS"
   description: "This paper presents a navigation-oriented LiDAR-guided monocular visual odometry and mapping system for unmanned ground vehicles."
-  image: "nalo_vom.png"  # 临时占位图片，请替换为实际项目图片
+  image: "nalo_vom.png" # 临时占位图片，请替换为实际项目图片
   date: "Aug 14, 2023"
-  url: "/publication/2023-01-01-nalo-vom"
+  url: "/portfolio/nalo-vom/"
   external: false
   tags: ["Robotics", "SLAM", "Visual Odometry"]
   demo_url: ""
   code_url: ""
-
 # 您可以继续添加更多项目，格式如下：
 # - title: "项目标题"
 #   category: "项目分类"

@@ -22,6 +22,7 @@ import argparse
 import os
 import re
 import sys
+import requests
 from datetime import datetime
 from pathlib import Path
 
@@ -55,13 +56,71 @@ def existing_titles() -> dict:
     return result
 
 
+def fetch_precise_date(title: str) -> list | None:
+    """Try to fetch a more precise date (year, month, day) from CrossRef."""
+    try:
+        url = f"https://api.crossref.org/works?query.bibliographic={title}&rows=1"
+        r = requests.get(url, timeout=5)
+        if r.status_code == 200:
+            data = r.json()
+            items = data.get('message', {}).get('items', [])
+            if items:
+                item = items[0]
+                # Fuzzy title check: title should be very similar
+                cr_title = item.get('title', [''])[0].lower()
+                if normalize_title(title) in normalize_title(cr_title) or normalize_title(cr_title) in normalize_title(title):
+                    # Prefer published-print, then published-online
+                    dp = item.get('published-print', item.get('published-online', {})).get('date-parts', [[]])[0]
+                    if dp and dp[0]: # Must at least have a year
+                        return dp
+    except Exception:
+        pass
+    return None
+
+
+def parse_month(month_str: str) -> str:
+    """Convert month (name or number) to 2-digit string."""
+    if not month_str:
+        return "01"
+    month_str = str(month_str).strip().lower()
+    months = {
+        'jan': '01', 'feb': '02', 'mar': '03', 'apr': '04', 'may': '05', 'jun': '06',
+        'jul': '07', 'aug': '08', 'sep': '09', 'oct': '10', 'nov': '11', 'dec': '12',
+        'january': '01', 'february': '02', 'march': '03', 'april': '04', 'may': '05', 'june': '06',
+        'july': '07', 'august': '08', 'september': '09', 'october': '10', 'november': '11', 'december': '12'
+    }
+    if month_str in months:
+        return months[month_str]
+    # Try numeric
+    m = re.search(r'(\d+)', month_str)
+    if m:
+        return f"{int(m.group(1)):02d}"
+    return "01"
+
+
+def split_authors(authors_str: str) -> list:
+    """Split author string into a list of authors, handling various separators."""
+    if not authors_str:
+        return []
+    if isinstance(authors_str, list):
+        return authors_str
+    
+    # Try splitting by "and" (BibTeX style), handles both "Author A and Author B" and "Author A, and Author B"
+    parts = re.split(r",\s*and\s+|\s+and\s+", authors_str)
+    if len(parts) > 1:
+        return [p.strip() for p in parts if p.strip()]
+    
+    # Try splitting by ";"
+    if ";" in authors_str:
+        return [p.strip() for p in authors_str.split(";") if p.strip()]
+    
+    # Fallback to comma
+    return [p.strip() for p in authors_str.split(",") if p.strip()]
+
+
 def get_author_position(authors_str: str) -> int:
     """Return 1-based position of Ziqi Hu in the author list (0 if not found)."""
-    # scholarly returns authors as a list or comma-separated string
-    if isinstance(authors_str, list):
-        authors = authors_str
-    else:
-        authors = [a.strip() for a in re.split(r",\s*(?:and\s+)?", authors_str)]
+    authors = split_authors(authors_str)
 
     for i, author in enumerate(authors, start=1):
         for variant in AUTHOR_NAME_VARIANTS:
@@ -72,10 +131,7 @@ def get_author_position(authors_str: str) -> int:
 
 def format_authors_html(authors_str: str) -> str:
     """Bold 'Ziqi Hu' in the author string."""
-    if isinstance(authors_str, list):
-        parts = authors_str
-    else:
-        parts = [a.strip() for a in re.split(r",\s*(?:and\s+)?", authors_str)]
+    parts = split_authors(authors_str)
 
     formatted = []
     for part in parts:
@@ -203,8 +259,18 @@ def main():
 
         # Determine publication date
         year = bib.get("pub_year", "")
-        if year:
-            pub_date = f"{year}-01-01"
+        month = bib.get("month", bib.get("pub_month", ""))
+        
+        # Try CrossRef for a better date
+        cr_date = fetch_precise_date(title)
+        if cr_date:
+            year = str(cr_date[0])
+            m = f"{cr_date[1]:02d}" if len(cr_date) > 1 and cr_date[1] else "01"
+            d = f"{cr_date[2]:02d}" if len(cr_date) > 2 and cr_date[2] else "01"
+            pub_date = f"{year}-{m}-{d}"
+        elif year:
+            m = parse_month(month)
+            pub_date = f"{year}-{m}-01"
         else:
             pub_date = datetime.now().strftime("%Y-%m-%d")
 

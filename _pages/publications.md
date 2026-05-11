@@ -55,7 +55,7 @@ author_profile: true
 {% assign all_pubs = site.publications | sort: 'date' | reverse %}
 
 {% assign first_author_pubs = "" | split: "" %}
-{% assign other_pubs = "" | split: "" %}
+{% assign other_pubs        = "" | split: "" %}
 
 {% for pub in all_pubs %}
   {% if pub.author_position == 1 or pub.corresponding == true %}
@@ -65,9 +65,27 @@ author_profile: true
   {% endif %}
 {% endfor %}
 
+<!-- Multi-key sort for co-authored: author_position ASC, then date DESC.
+     Liquid only supports single-key sort, so we iterate positions explicitly.
+     other_pubs is already date-DESC, so within each position group the order is preserved. -->
+{% assign other_sorted = "" | split: "" %}
+{% for pos in (1..20) %}
+  {% for post in other_pubs %}
+    {% if post.author_position == pos %}
+      {% assign other_sorted = other_sorted | push: post %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+<!-- Papers with no author_position (0 or missing) go at the end -->
+{% for post in other_pubs %}
+  {% unless post.author_position %}
+    {% assign other_sorted = other_sorted | push: post %}
+  {% endunless %}
+{% endfor %}
+
 <div class="pub-section-title">First / Corresponding Author</div>
 
-{% assign counter = first_author_pubs.size %}
+{% assign counter = 1 %}
 {% for post in first_author_pubs %}
 <div class="publication-item">
   <span class="publication-number">[{{ counter }}]</span>
@@ -77,23 +95,19 @@ author_profile: true
     <a href="{{ post.venue_url }}" class="pub-url-link" target="_blank">[Link]</a>
   {% endif %}
 </div>
-{% assign counter = counter | minus: 1 %}
+{% assign counter = counter | plus: 1 %}
 {% endfor %}
 
 <div class="pub-section-title">Co-authored Publications</div>
 
-{% assign other_sorted = other_pubs | sort: 'author_position' %}
-{% assign other_sorted = other_sorted | sort: 'date' | reverse %}
-
-{% assign counter2 = other_sorted.size %}
 {% for post in other_sorted %}
 <div class="publication-item">
-  <span class="publication-number">[{{ counter2 }}]</span>
+  <span class="publication-number">[{{ counter }}]</span>
   {% assign citation_text = post.citation | replace: 'Hu, Z.', '<span class="author-highlight">Hu, Z.</span>' | replace: 'Ziqi Hu', '<span class="author-highlight">Ziqi Hu</span>' %}
   {{ citation_text }}
   {% if post.venue_url %}
     <a href="{{ post.venue_url }}" class="pub-url-link" target="_blank">[Link]</a>
   {% endif %}
 </div>
-{% assign counter2 = counter2 | minus: 1 %}
+{% assign counter = counter | plus: 1 %}
 {% endfor %}

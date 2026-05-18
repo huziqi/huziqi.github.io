@@ -168,6 +168,8 @@ I'm a Ph.D. student in Civil Engineering at Hong Kong University of Science and 
 
 Prior to joining HKUST, I was an algorithm engineer at Meituan, Beijing from 2023 to 2024. I received my Bachelor and M.Phil at Nankai University, majoring in Intelligent Science and Robotics, supervised by Prof. Jing Yuan.
 
+I'm currently looking for visiting scholar positions starting from Fall 2026, and post-doc positions starting from Fall 2027. Please feel free to reach out if you have any questions or opportunities. [[EMAIL]](mailto:zhubg@connect.ust.hk)
+
 # News
 
 <div style="max-height: 300px; overflow-y: auto; margin-bottom: 30px;">

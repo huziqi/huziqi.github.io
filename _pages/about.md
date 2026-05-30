@@ -218,10 +218,12 @@ I'm currently looking for visiting scholar positions starting from Fall 2026, an
          Replace YOUR_CLUSTRMAPS_ID below with your ID.
          Example script src ending: ?cl=ffffff&w=a&t=tt&d=abcXYZ123
          ════════════════════════════════════════════════ -->
-    <div style="width:100%; min-height:180px; border-radius:8px; overflow:hidden;">
+    <!-- <div style="width:100%; min-height:180px; border-radius:8px; overflow:hidden;">
       <script type='text/javascript' id='clustrmaps'
         src='//cdn.clustrmaps.com/map_v2.js?cl=d6e8ee&w=a&t=tt&d=M3E6ixmBtOIclBDpi26LmN_wxPmg8cZi1O8L_AluaOk&co=ffffff&ct=005f73&cmo=ff4444&cmn=cc2222'>
-      </script>
+      </script> -->
+    <div style="width:100%; min-height:180px; border-radius:8px; overflow:hidden;" markdown="0">
+    <script type="text/javascript" id="clustrmaps" src="https://cdn.clustrmaps.com/map_v2.js?cl=d6e8ee&w=a&t=tt&d=M3E6ixmBtOIclBDpi26LmN_wxPmg8cZi1O8L_AluaOk&co=ffffff&ct=005f73&cmo=ff4444&cmn=cc2222"></script>
     </div>
   </div>
 

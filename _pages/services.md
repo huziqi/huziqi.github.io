@@ -24,6 +24,10 @@ author_profile: true
 1. [International Workshop on Reinforcement Learning for Energy Management in Buildings & Cities](https://www.example.com), Technical Program Committee, 2021
 2. [International Workshop on Reinforcement Learning for Energy Management in Buildings & Cities](https://www.example.com), Technical Program Committee, 2020 -->
 
+## Conference Organizing Committee
+
+1. [The International Conference of Building and Simulation (BAS 2026)](https://www.bas2026.org/committess.html), Organizing Committee, 2026
+
 ## Journal Reviewer
 
 1. Energy and Buildings

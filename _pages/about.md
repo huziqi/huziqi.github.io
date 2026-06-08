@@ -218,18 +218,18 @@ I'm currently looking for visiting scholar positions starting from Fall 2026, an
          Replace YOUR_CLUSTRMAPS_ID below with your ID.
          Example script src ending: ?cl=ffffff&w=a&t=tt&d=abcXYZ123
          ════════════════════════════════════════════════ -->
-    <!-- <div style="width:100%; min-height:180px; border-radius:8px; overflow:hidden;">
+    <div style="width:100%; min-height:180px; border-radius:8px; overflow:hidden;">
       <script type='text/javascript' id='clustrmaps'
         src='//cdn.clustrmaps.com/map_v2.js?cl=d6e8ee&w=a&t=tt&d=M3E6ixmBtOIclBDpi26LmN_wxPmg8cZi1O8L_AluaOk&co=ffffff&ct=005f73&cmo=ff4444&cmn=cc2222'>
-      </script> -->
-    <div style="width:100%; min-height:180px; border-radius:8px; overflow:hidden;" markdown="0">
-    <script type="text/javascript" id="clustrmaps" src="https://cdn.clustrmaps.com/map_v2.js?cl=d6e8ee&w=a&t=tt&d=M3E6ixmBtOIclBDpi26LmN_wxPmg8cZi1O8L_AluaOk&co=ffffff&ct=005f73&cmo=ff4444&cmn=cc2222"></script>
+      </script>
+    <!-- <div style="width:100%; min-height:180px; border-radius:8px; overflow:hidden;" markdown="0">
+    <script type="text/javascript" id="clustrmaps" src="https://cdn.clustrmaps.com/map_v2.js?cl=d6e8ee&w=a&t=tt&d=M3E6ixmBtOIclBDpi26LmN_wxPmg8cZi1O8L_AluaOk&co=ffffff&ct=005f73&cmo=ff4444&cmn=cc2222"></script> -->
     </div>
   </div>
 
   <!-- Right: Flag Counter -->
   <div style="flex: 1; min-width: 200px;">
-    <p style="margin: 0 0 10px 0; font-size: 0.82em; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Visits by Country</p>
+    <p style="margin: 0 0 10px 0; font-size: 0.82em; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Visits by Countries and Regions</p>
     <a href="https://info.flagcounter.com/pYAe"><img src="https://s01.flagcounter.com/count2/pYAe/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_20/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0" style="max-width:100%; border-radius:8px; border: 1px solid #e2e8f0;"></a>
   </div>
 

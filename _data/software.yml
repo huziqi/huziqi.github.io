@@ -1,0 +1,10 @@
+# Software listed on /software/ (rendered by _pages/software.html)
+# To add a tool: add an entry here and create its detail page under _pages/.
+- name: "BCS-Tool"
+  tagline: "Size battery storage for an entire industrial park in seconds."
+  description: "An open-source linear-programming tool that finds the optimal battery capacity and year-round dispatch from net-load data, and reports annual savings, payback period, NPV and IRR. Includes a Python API and a web interface."
+  image: "bcs_tool/ui.png"
+  url: "/software/bcs-tool/"
+  github: "https://github.com/huziqi/BCS-Tool"
+  paper: "https://doi.org/10.1007/s12273-026-1477-1"
+  tags: ["Python", "GPL-3.0", "Linear programming", "Battery storage"]

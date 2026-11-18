@@ -1,0 +1,89 @@
+---
+layout: archive
+title: "Research"
+permalink: /research/
+redirect_from:
+  - /portfolio/
+author_profile: true
+---
+
+{% include base_path %}
+
+<p class="rs-intro">Intelligent control and energy management for buildings, powered by large language models, optimization, and machine learning.</p>
+
+<nav class="rs-subnav" aria-label="On this page">
+  <a href="#research-interests">Research interests</a>
+  <a href="#research-projects">Projects</a>
+  <a href="#patents">Patents</a>
+  <a href="{{ base_path }}/publications/">Publications</a>
+</nav>
+
+<style>
+.rs-intro { color: #6e6e73; font-size: 1em; margin: 0 0 1em; }
+.rs-subnav { display: flex; flex-wrap: wrap; gap: 6px 22px; padding-bottom: 1em; margin-bottom: 0.4em; border-bottom: 1px solid #e5e5ea; font-size: 0.8em; }
+.rs-subnav a { color: #0a7c86; text-decoration: none !important; }
+.rs-subnav a:hover { color: #0066cc; }
+.rs-h { font-size: 1.35em; font-weight: 700; margin: 1.4em 0 0.8em; padding-bottom: 0.4em; border-bottom: 1px solid #e5e5ea; scroll-margin-top: 80px; }
+.rs-interests { margin: 0 0 1em 1.2em; padding: 0; }
+.rs-interests li { margin-bottom: 1em; }
+.rs-interests strong { display: block; color: #1d1d1f; font-size: 0.95em; }
+.rs-interests span { color: #3a3a3c; font-size: 0.82em; }
+.rs-proj { list-style: none; margin: 0; padding: 0; }
+.rs-item { display: grid; grid-template-columns: 220px 1fr; gap: 0 24px; padding: 1.3em 0; border-bottom: 1px solid #e5e5ea; }
+.rs-item:last-child { border-bottom: 0; }
+.rs-thumb { display: block; background: #f5f5f7; border-radius: 12px; aspect-ratio: 16 / 10; overflow: hidden; text-decoration: none !important; }
+.rs-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 10px; box-sizing: border-box; }
+.rs-title { margin: 0 0 0.35em; font-size: 1em; font-weight: 700; line-height: 1.45; }
+.rs-title a { color: #1d1d1f; text-decoration: none !important; }
+.rs-title a:hover { color: #0066cc; }
+.rs-meta { margin: 0 0 0.45em; color: #6e6e73; font-size: 0.75em; }
+.rs-desc { margin: 0 0 0.5em; color: #3a3a3c; font-size: 0.82em; line-height: 1.55; }
+.rs-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.8em; }
+.rs-links a { color: #0066cc; text-decoration: none !important; }
+.rs-links a:hover { text-decoration: underline !important; }
+.rs-pat { margin: 0 0 1em 1.2em; padding: 0; }
+.rs-pat li { margin-bottom: 1em; font-size: 0.85em; line-height: 1.55; color: #3a3a3c; }
+.rs-pat .rs-pat-title { display: block; font-weight: 700; color: #1d1d1f; }
+.rs-pat .rs-pat-no { color: #6e6e73; font-size: 0.92em; }
+@media (max-width: 640px) {
+  .rs-item { grid-template-columns: 1fr; }
+  .rs-thumb { margin-bottom: 0.8em; }
+}
+</style>
+
+<h2 class="rs-h" id="research-interests">Research interests</h2>
+
+<ul class="rs-interests">
+  <li><strong>Intelligent Building Control</strong><span>LLM-based automated control design; Model predictive control; Transferable and few-shot control for HVAC systems.</span></li>
+  <li><strong>Building Energy Systems and Grid Interaction</strong><span>Battery energy storage sizing; Load flexibility; Building decarbonization.</span></li>
+  <li><strong>Semantic Models and Building Data</strong><span>Brick schema; Control Description Language (CDL); LLM-based building data query.</span></li>
+  <li><strong>Robotics and Perception</strong><span>SLAM; LiDAR and visual odometry; Navigation for unmanned ground vehicles.</span></li>
+</ul>
+
+<h2 class="rs-h" id="research-projects">Research projects</h2>
+
+<ul class="rs-proj">
+{% assign projects = site.portfolio | sort: "date" | reverse %}
+{% for p in projects %}
+  <li class="rs-item">
+    <a class="rs-thumb" href="{{ base_path }}{{ p.url }}" aria-label="{{ p.title | split: ':' | first }}">{% if p.image %}<img src="{{ base_path }}/images/{{ p.image }}" alt="" loading="lazy">{% endif %}</a>
+    <div>
+      <h3 class="rs-title"><a href="{{ base_path }}{{ p.url }}">{{ p.title }}</a></h3>
+      <p class="rs-meta">{% if p.venue %}{{ p.venue }} · {% endif %}{{ p.date | date: "%b %Y" }}</p>
+      {% if p.excerpt %}<p class="rs-desc">{{ p.excerpt | strip_html }}</p>{% endif %}
+      <div class="rs-links">
+        <a href="{{ base_path }}{{ p.url }}">Learn more ›</a>
+        {% if p.paper_url and p.paper_url != "" %}<a href="{{ p.paper_url }}" target="_blank" rel="noopener">Paper ↗</a>{% endif %}
+        {% if p.code_url and p.code_url != "" %}<a href="{{ p.code_url }}" target="_blank" rel="noopener">Code ↗</a>{% endif %}
+      </div>
+    </div>
+  </li>
+{% endfor %}
+</ul>
+
+<h2 class="rs-h" id="patents">Patents</h2>
+
+<ol class="rs-pat">
+  <li><span class="rs-pat-title">Power Line Fitting Method for Live-Line Working Robots Using LiDAR Point Clouds in Distribution Networks</span><strong>Ziqi Hu</strong>, Jing Yuan, Yansong Gong, Shizhuo Yu, and Xuebo Zhang<br><span class="rs-pat-no">Chinese Patent Application No. ZL202110845733.5</span></li>
+  <li><span class="rs-pat-title">Co-Simulation Method, System, and Program Product for Building and Electric Vehicle (EV) Charging</span>Lunlong Li, Zhe Wang, <strong>Ziqi Hu</strong>, Zhifu Wu, Baiqiang Shen, Chaoliang Wang, Wei Liu, Shiming Tian, and Fanpeng Pu<br><span class="rs-pat-no">Chinese Patent Application No. ZL202511656274.0</span></li>
+</ol>

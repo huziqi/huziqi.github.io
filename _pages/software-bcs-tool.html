@@ -1,0 +1,203 @@
+---
+layout: archive
+title: "BCS-Tool"
+permalink: /software/bcs-tool/
+author_profile: true
+excerpt: "Open-source battery energy storage sizing tool: optimal capacity, dispatch and investment metrics in seconds."
+---
+
+{% include base_path %}
+
+<style>
+.sw { --ink:#1d1d1f; --ink2:#3a3a3c; --mute:#6e6e73; --line:#e5e5ea; --accent:#0066cc; --teal:#0a8f92; --soft:#f5f5f7;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif; color: var(--ink2); }
+.archive > .page__title { display:none; }  /* the hero carries the page title */
+.sw-intro { color:#6e6e73; margin:0 0 1.6em; }
+.sw-back { display:inline-block; font-size:.8em; color:#0066cc !important; margin:0 0 14px; }
+.sw a { text-decoration:none !important; }
+
+/* hero */
+.sw-hero { position:relative; overflow:hidden; border-radius:24px; padding:44px 40px 0; color:#f5f5f7;
+  background: radial-gradient(120% 140% at 85% -10%, #1f4e79 0%, #0d2238 45%, #070d16 100%); }
+.sw-hero::after { content:""; position:absolute; inset:auto -10% -60% 40%; height:120%; background:radial-gradient(closest-side, rgba(10,143,146,.35), transparent); pointer-events:none; }
+.sw-badge { display:inline-flex; gap:8px; align-items:center; font-size:.7em; letter-spacing:.06em; text-transform:uppercase; color:#7fd6d8; font-weight:600; }
+.sw-badge i { width:6px; height:6px; border-radius:50%; background:#34c3a6; box-shadow:0 0 0 4px rgba(52,195,166,.18); }
+.sw-hero h1 { margin:.35em 0 .2em; font-size:2.3em; line-height:1.08; font-weight:700; letter-spacing:-.02em; color:#fff; border:0; padding:0; }
+.sw-hero .sw-sub { font-size:1.12em; line-height:1.45; color:#c7d2de; max-width:36em; margin:0 0 1.3em; }
+.sw-cta { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:1.2em; position:relative; z-index:1; }
+.sw-btn { display:inline-flex; align-items:center; gap:8px; padding:.62em 1.25em; border-radius:980px; font-size:.82em; font-weight:600; transition:transform .2s ease, background .2s ease; }
+.sw-btn:hover { transform:translateY(-1px); }
+.sw-btn--primary { background:#fff; color:#0b1a2b !important; }
+.sw-btn--ghost { color:#fff !important; box-shadow:inset 0 0 0 1px rgba(255,255,255,.35); }
+.sw-btn--ghost:hover { background:rgba(255,255,255,.08); }
+.sw-tags { display:flex; flex-wrap:wrap; gap:8px; font-size:.68em; color:#9fb0c3; margin-bottom:28px; position:relative; z-index:1; }
+.sw-tags span { padding:.3em .8em; border-radius:980px; background:rgba(255,255,255,.07); }
+.sw-shot { position:relative; z-index:1; margin:0 -8px; background:#fff; border-radius:14px 14px 0 0; padding:14px 14px 0; box-shadow:0 -10px 40px rgba(0,0,0,.35); }
+.sw-shot img { display:block; width:100%; height:auto; border-radius:6px 6px 0 0; }
+
+/* stats */
+.sw-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:22px 0 8px; }
+.sw-stat { background:var(--soft); border-radius:18px; padding:20px 18px; }
+.sw-stat b { display:block; font-size:1.75em; line-height:1.1; color:var(--ink); font-weight:700; letter-spacing:-.02em; }
+.sw-stat span { display:block; margin-top:.45em; font-size:.72em; line-height:1.45; color:var(--mute); }
+
+/* sections */
+.sw-h { font-size:1.6em; font-weight:700; color:var(--ink); letter-spacing:-.015em; margin:1.8em 0 .3em; border:0; padding:0; }
+.sw-lead { color:var(--mute); margin:0 0 1.2em; font-size:.95em; }
+.sw-feat { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.sw-card { border:1px solid var(--line); border-radius:18px; padding:20px; background:#fff; transition:box-shadow .25s ease, transform .25s ease; }
+.sw-card:hover { box-shadow:0 10px 30px rgba(0,0,0,.07); transform:translateY(-2px); }
+.sw-ico { width:36px; height:36px; border-radius:10px; display:grid; place-items:center; background:#e8f4f4; color:var(--teal); margin-bottom:12px; }
+.sw-card h3 { margin:0 0 .35em; font-size:.98em; color:var(--ink); font-weight:700; }
+.sw-card p { margin:0; font-size:.8em; line-height:1.55; color:var(--ink2); }
+
+/* how it works */
+.sw-steps { counter-reset:s; list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.sw-steps li { counter-increment:s; background:var(--soft); border-radius:18px; padding:20px; font-size:.8em; line-height:1.55; }
+.sw-steps li::before { content:counter(s); display:inline-grid; place-items:center; width:26px; height:26px; border-radius:50%; background:var(--ink); color:#fff; font-weight:700; font-size:.9em; margin-bottom:10px; }
+.sw-steps b { display:block; color:var(--ink); font-size:1.08em; margin-bottom:.25em; }
+.sw-fig { margin:18px 0 0; }
+.sw-fig img { width:100%; height:auto; border-radius:14px; border:1px solid var(--line); background:#fff; }
+.sw-fig figcaption { font-size:.72em; color:var(--mute); margin-top:.6em; }
+
+/* results table */
+.sw-table { width:100%; border-collapse:collapse; font-size:.8em; margin:0; display:table; }
+.sw-table th, .sw-table td { padding:.7em .6em; border-bottom:1px solid var(--line); text-align:left; }
+.sw-table th { color:var(--mute); font-weight:600; font-size:.9em; }
+.sw-table td:last-child, .sw-table th:last-child { text-align:right; }
+.sw-table .hl td { color:var(--ink); font-weight:700; }
+
+/* code */
+.sw-code { background:#0d1117; color:#e6edf3; border-radius:16px; padding:18px 20px; font: .74em/1.65 "SF Mono", ui-monospace, Menlo, Consolas, monospace; overflow-x:auto; margin:0 0 14px; white-space:pre; }
+.sw-code .c { color:#8b949e; } .sw-code .k { color:#ff7b72; } .sw-code .s { color:#a5d6ff; } .sw-code .f { color:#d2a8ff; }
+.sw-tabs { display:flex; gap:6px; margin-bottom:10px; }
+.sw-tabs span { font-size:.72em; font-weight:600; padding:.3em .9em; border-radius:980px; background:var(--soft); color:var(--ink2); }
+.sw-note { font-size:.76em; line-height:1.55; color:var(--ink2); background:#fff8e6; border:1px solid #f3e2b3; border-radius:14px; padding:12px 16px; margin:4px 0 0; }
+
+/* cite */
+.sw-cite { border-radius:18px; background:var(--soft); padding:20px 22px; font-size:.8em; line-height:1.6; }
+.sw-cite b { color:var(--ink); }
+.sw-foot { display:flex; flex-wrap:wrap; gap:18px; margin-top:12px; font-size:.82em; }
+.sw-foot a { color:var(--accent); font-weight:600; }
+
+@media (max-width: 800px) {
+  .sw-stats { grid-template-columns:repeat(2,1fr); }
+  .sw-feat, .sw-steps { grid-template-columns:1fr; }
+  .sw-hero { padding:32px 22px 0; }
+  .sw-hero h1 { font-size:1.8em; }
+}
+@media (prefers-reduced-motion: reduce) { .sw-card, .sw-btn { transition:none; } .sw-card:hover, .sw-btn:hover { transform:none; } }
+</style>
+
+<div class="sw">
+
+<a class="sw-back" href="{{ base_path }}/software/">‹ All software</a>
+
+<section class="sw-hero" aria-labelledby="bcs-title">
+  <span class="sw-badge"><i></i>Open source · GPL-3.0 · Python</span>
+  <h1 id="bcs-title">BCS-Tool</h1>
+  <p class="sw-sub">Size battery storage for an entire industrial park in seconds. Give it a year of net-load data and get the optimal capacity, dispatch schedule and annual savings, plus payback period, NPV and IRR.</p>
+  <div class="sw-cta">
+    <a class="sw-btn sw-btn--primary" href="https://github.com/huziqi/BCS-Tool" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub</a>
+    <a class="sw-btn sw-btn--ghost" href="#bcs-start">Get started ›</a>
+    <a class="sw-btn sw-btn--ghost" href="https://doi.org/10.1007/s12273-026-1477-1" target="_blank" rel="noopener">Read the paper ↗</a>
+  </div>
+  <div class="sw-tags"><span>Linear programming</span><span>Gurobi</span><span>Flask web app</span><span>Time-of-use &amp; demand charges</span><span>Multi-site sizing</span></div>
+  <figure class="sw-shot"><img src="{{ base_path }}/images/bcs_tool/ui.png" alt="BCS-Tool web interface showing parameter settings, economic metrics and time-series charts" loading="lazy"></figure>
+</section>
+
+<div class="sw-stats" role="list">
+  <div class="sw-stat" role="listitem"><b>8.6 s</b><span>to size a full year of 15-min data, the same optimum a MILP reaches in 116.8 s</span></div>
+  <div class="sw-stat" role="listitem"><b>13.6×</b><span>faster than the MILP formulation, single-thread</span></div>
+  <div class="sw-stat" role="listitem"><b>4.56 yr</b><span>payback for PV + storage in a real industrial park case</span></div>
+  <div class="sw-stat" role="listitem"><b>20.6%</b><span>internal rate of return in the same case</span></div>
+</div>
+
+<h2 class="sw-h">Why BCS-Tool</h2>
+<p class="sw-lead">Battery sizing studies usually rely on mixed-integer models that are slow, or on rule-based control that leaves savings on the table. BCS-Tool solves sizing and year-round dispatch together as one linear program.</p>
+
+<div class="sw-feat">
+  <div class="sw-card"><div class="sw-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Fast, exact optimum</h3><p>No binary variables. The pure LP reaches the same capacity as the MILP benchmark, about 13.6 times faster.</p></div>
+  <div class="sw-card"><div class="sw-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div><h3>Sizing and dispatch together</h3><p>Capacity and every time step of charging and discharging are optimized at once, so the result reflects the best possible operation.</p></div>
+  <div class="sw-card"><div class="sw-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Investment-ready metrics</h3><p>Reports annual savings, payback period, NPV and IRR, with the battery cost annualized over the project life.</p></div>
+  <div class="sw-card"><div class="sw-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Real tariffs</h3><p>Hourly time-of-use prices or seasonal peak, high, flat and valley tiers, plus monthly or daily demand charges and export credits.</p></div>
+  <div class="sw-card"><div class="sw-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><h3>Multi-site allocation</h3><p>Split one storage budget across several sub-plots, each with its own meter and load, in a single joint optimization.</p></div>
+  <div class="sw-card"><div class="sw-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/></svg></div><h3>Python API and web interface</h3><p>Script batch studies and sensitivity analyses in Python. A Flask browser interface with charts is included in the repository.</p></div>
+</div>
+
+<h2 class="sw-h">How it works</h2>
+<ol class="sw-steps">
+  <li><b>Bring your data</b>A CSV of net load (building load minus PV) with a timestamp column. One full year at 15-min to 1-h resolution is recommended.</li>
+  <li><b>Set the economics</b>Battery cost, efficiencies, state-of-charge limits, power ratio, tariff, demand charge, export price ratio, discount rate and project life.</li>
+  <li><b>Optimize</b>The LP returns the optimal capacity, the full charging schedule, grid import and export, and the financial indicators.</li>
+</ol>
+<figure class="sw-fig"><img src="{{ base_path }}/images/bcs_tool/overview.png" alt="BCS-Tool framework: data access, LP formulation and solving, optimal capacity and sensitivity analysis" loading="lazy"><figcaption>The BCS-Tool framework, from data access and LP formulation to optimal capacity and sensitivity analysis.</figcaption></figure>
+
+<h2 class="sw-h">Proven on a real industrial park</h2>
+<p class="sw-lead">Four sub-plots and 59 enterprises in Changsha, China, with one year of 15-min smart-meter load data and 2.1 MW of simulated rooftop and facade PV.</p>
+<table class="sw-table">
+  <thead><tr><th>Result</th><th>Value</th></tr></thead>
+  <tbody>
+    <tr><td>Optimal storage, sized per sub-plot (one-part / two-part tariff)</td><td>16,359 / 11,373 kWh</td></tr>
+    <tr><td>Payback, storage only, every sub-plot</td><td>within 3.6 years</td></tr>
+    <tr class="hl"><td>Whole park with PV + storage, 10 MWh budget (one-part tariff)</td><td>4.56 yr payback · 20.63% IRR</td></tr>
+    <tr><td>Solve time, LP vs. MILP (single-thread)</td><td>8.60 s vs. 116.80 s</td></tr>
+    <tr><td>Capacity suggested by rule-based sizing for comparison (one-part tariff)</td><td>5,959 kWh</td></tr>
+  </tbody>
+</table>
+
+<h2 class="sw-h" id="bcs-start">Get started</h2>
+<p class="sw-lead">Python 3.8 or later and a Gurobi license (free for academic use) are required.</p>
+<div class="sw-tabs"><span>Install</span></div>
+<pre class="sw-code"><span class="c"># 1. Clone and install</span>
+git clone https://github.com/huziqi/BCS-Tool.git
+<span class="k">cd</span> BCS-Tool
+pip install -e .
+pip install matplotlib numpy-financial flask flask-cors
+
+<span class="c"># 2. Activate your Gurobi license: https://www.gurobi.com/academia/</span></pre>
+<div class="sw-tabs"><span>Python API</span></div>
+<pre class="sw-code"><span class="k">from</span> pvbat_optimizer <span class="k">import</span> PVBatOptimizer_linearProg, OptimizerConfig, OptimizerUtils
+
+<span class="c"># CSV: first column is a timestamp, second is net load in kW</span>
+net_load = OptimizerUtils.<span class="f">net_profiles</span>(<span class="s">"net_load.csv"</span>)
+
+config = <span class="f">OptimizerConfig</span>(
+    battery_cost_per_kwh=<span class="s">1000</span>,        <span class="c"># CNY/kWh</span>
+    use_seasonal_prices=<span class="k">True</span>,        <span class="c"># peak / high / flat / valley tariff</span>
+    demand_charge_rate=<span class="s">33.8</span>,
+    years=<span class="s">15</span>, discount_rate=<span class="s">0.12</span>,
+    decision_step=<span class="s">0.25</span>,                <span class="c"># hours per time step (15-min data)</span>
+)
+
+result = <span class="f">PVBatOptimizer_linearProg</span>(config).<span class="f">optimize</span>(net_load)
+<span class="f">print</span>(result[<span class="s">"battery_capacity"</span>], result[<span class="s">"annual_savings"</span>])
+
+<span class="c"># Payback period, NPV and IRR</span>
+metrics = OptimizerUtils.<span class="f">calculate_economic_metrics</span>(
+    annual_savings=result[<span class="s">"annual_savings"</span>],
+    project_lifetime=config.years,
+    discount_rate=config.discount_rate,
+    battery_construction_cost=result[<span class="s">"battery_construction_cost"</span>],
+)</pre>
+<div class="sw-tabs"><span>Multi-site</span></div>
+<pre class="sw-code"><span class="k">from</span> pvbat_optimizer <span class="k">import</span> MultiPlotOptimizer
+
+loads = {<span class="s">"E13"</span>: load_e13, <span class="s">"E25"</span>: load_e25}   <span class="c"># pandas Series on the same time index</span>
+res = <span class="f">MultiPlotOptimizer</span>(config, total_battery_capacity=<span class="s">10000</span>).<span class="f">optimize_multi_plots</span>(loads)
+<span class="f">print</span>(res[<span class="s">"capacity_allocation"</span>])</pre>
+<div class="sw-tabs"><span>Web app</span></div>
+<pre class="sw-code">python app.py      <span class="c"># serves the interface at http://localhost:5000</span></pre>
+
+<h2 class="sw-h">Cite</h2>
+<div class="sw-cite">
+  <b>Ziqi Hu</b>, Parastoo Mohebi, Elence Xinzhu Chen, Xiaoguang Wang, Zhe Wang. BCS-Tool: An open-source web application for capacity sizing of battery energy storage systems. <i>Building Simulation</i>, 19(8): 2151–2168, 2026. <a href="https://doi.org/10.1007/s12273-026-1477-1" target="_blank" rel="noopener">doi:10.1007/s12273-026-1477-1</a>
+  <div class="sw-foot">
+    <a href="https://github.com/huziqi/BCS-Tool" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="https://doi.org/10.1007/s12273-026-1477-1" target="_blank" rel="noopener">Paper (open access) ↗</a>
+    <a href="{{ base_path }}/portfolio/bcs-tool/">Research project ›</a>
+  </div>
+</div>
+<p class="sw-intro" style="font-size:.72em;margin-top:1em;">Figures reproduced from the open-access article under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+
+</div>

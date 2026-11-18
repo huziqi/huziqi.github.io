@@ -3,6 +3,11 @@ title: "AutoControl: An end-to-end fully automated workflow for control design o
 excerpt: "Developing an efficient and effective control system is critical to enhance built environment quality and reduce building energy consumption."
 collection: portfolio
 permalink: /portfolio/autocontrol/
+date: 2025-09-15
+image: "autocontrol.png"
+venue: "Energy"
+paper_url: "https://doi.org/10.1016/j.energy.2025.138329"
+code_url: ""
 ---
 
 ## 📌 Overview

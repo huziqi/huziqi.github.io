@@ -3,6 +3,11 @@ title: "NALO-VOM: Navigation-Oriented LiDAR-Guided Monocular Visual Odometry and
 excerpt: "A novel framework bridging the gap between monocular visual odometry and reliable UGV navigation."
 collection: portfolio
 permalink: /portfolio/nalo-vom/
+date: 2023-08-14
+image: "nalo_vom.png"
+venue: "IEEE Transactions on Intelligent Vehicles"
+paper_url: "https://ieeexplore.ieee.org/abstract/document/10216321"
+code_url: ""
 ---
 
 ---

@@ -19,6 +19,8 @@ redirect_from:
 
 # Work Experience
 
+- 2026.08-2026.12: Internship Researcher at Xiaomi, Wuhan, China
+  - Duties include: Developing a vertical-domain LLM for HVAC systems and transfer-learning based HVAC control algorithms.
 - 2023-2024: Algorithm Engineer in Meituan
   - Duties include: Research on Causal Inference and Intelligent pricing on delivery fee.
 - 2018.08-2018.09: Assistant researcher at the National Institute of Informatics, Japan
@@ -32,7 +34,9 @@ redirect_from:
   
 Selected Awards
 ======
-* Champion of RoboCup Asia­Pacific 2017 in RoboCup@Home Open Platform League and Education Challenge League
-* Nomination for Best Application Paper Award of 2019 IEEE International Conference on 3M-­NANO
-* Excellent Bachelor’s Degree Project, Nankai University
-* HKUST RedBird Academic Excellence Award for PhD Students in 2025-26
+* Champion of RoboCup Asia-Pacific 2017 in RoboCup@Home Open Platform League and Education Challenge League
+* Recipient of HKUST RedBird Academic Excellence Award 2025-2026
+* Best Oral Finalist Award and Best Poster Award of The International Conference of Building and Simulation 2026
+* Nomination for Best Application Paper Award of 2019 IEEE International Conference on 3M-NANO
+* Recipient, Department of Artificial Intelligence Award for Outstanding Thesis Project (2020)
+* Recipient of the Gongneng Scholarship (2017), Innovation Scholarship (2018)

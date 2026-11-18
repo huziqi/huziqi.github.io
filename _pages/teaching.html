@@ -5,8 +5,32 @@ permalink: /teaching/
 author_profile: true
 ---
 
-{% include base_path %}
+<p class="tc-intro">Courses, tutorials, and guest lectures.</p>
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+<style>
+.tc-intro { color: #6e6e73; font-size: 1em; margin: 0 0 1.2em; }
+.tc-list { list-style: none; margin: 0; padding: 0; }
+.tc-item { padding: 1.4em 0; border-bottom: 1px solid #e5e5ea; }
+.tc-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.tc-title { margin: 0 0 0.5em; font-size: 1.05em; font-weight: 700; line-height: 1.45; color: #1d1d1f; }
+.tc-term { flex: none; color: #6e6e73; font-size: 0.75em; white-space: nowrap; }
+.tc-line { margin: 0 0 0.3em; font-size: 0.82em; line-height: 1.5; color: #3a3a3c; }
+.tc-inst { color: #6e6e73; }
+@media (max-width: 640px) {
+  .tc-head { flex-direction: column; gap: 0; }
+  .tc-term { order: -1; margin-bottom: 0.3em; }
+}
+</style>
+
+<ul class="tc-list">
+{% for course in site.data.teaching %}
+  <li class="tc-item">
+    <div class="tc-head">
+      <h2 class="tc-title">{% if course.code and course.code != "" %}{{ course.code }} · {% endif %}{{ course.title }}</h2>
+      <span class="tc-term">{{ course.term }}</span>
+    </div>
+    <p class="tc-line">{{ course.role }}</p>
+    <p class="tc-line tc-inst">{{ course.institution }}</p>
+  </li>
 {% endfor %}
+</ul>

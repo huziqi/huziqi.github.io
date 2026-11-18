@@ -12,3 +12,6 @@ node_modules
 package-lock.json
 
 .jekyll-metadata
+
+# Sass cache from local preview builds
+.sass-cache/

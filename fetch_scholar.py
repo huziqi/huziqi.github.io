@@ -18,6 +18,8 @@ Features:
     - Provides a summary of added/skipped papers
 """
 
+from __future__ import annotations
+
 import argparse
 import os
 import re
@@ -225,8 +227,10 @@ def main():
         author = scholarly.search_author_id(args.scholar_id)
         author = scholarly.fill(author, sections=["publications"])
     except Exception as e:
-        print(f"ERROR: Failed to fetch Scholar profile: {e}")
-        sys.exit(1)
+        # Google Scholar often blocks requests from GitHub Actions runners.
+        # Report it as a warning instead of failing the whole workflow.
+        print(f"::warning::Failed to fetch Google Scholar profile, skipping this run: {e}")
+        sys.exit(0)
 
     existing = existing_titles()
     added = []

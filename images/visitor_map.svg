@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 432" role="img" aria-labelledby="vm-title vm-desc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
 <title id="vm-title">Visitor map</title>
-<desc id="vm-desc">United States: 125, Hong Kong: 42, China: 22, Germany: 4, Taiwan: 4, Singapore: 3, Poland: 3, United Kingdom: 2, Australia: 2, France: 2, Japan: 2, Canada: 2, Philippines: 1, South Korea: 1, United Arab Emirates: 1</desc>
+<desc id="vm-desc">United States: 126, Hong Kong: 42, China: 25, Germany: 4, Taiwan: 4, Singapore: 3, Poland: 3, United Kingdom: 2, Australia: 2, France: 2, Japan: 2, Canada: 2, Philippines: 1, South Korea: 1, United Arab Emirates: 1</desc>
 <rect width="1000" height="432" fill="#ffffff"/>
 <g stroke="#ffffff" stroke-width="0.6" stroke-linejoin="round">
 <path fill="#e2e8f0" d="M972.2 281.9L972.2 283.3L970.4 283.9L968.7 284.5L968.3 283.5L969.7 282.9L970.6 282.8L972.2 281.9ZM967.0 285.9L967.7 285.5L968.7 286.3L968.2 287.7L966.5 288.1L964.9 287.8L964.7 286.5L965.7 285.6L967.0 285.9ZM972.8 281.7L972.4 283.1L972.2 283.3L972.2 281.9L972.8 281.7Z"/>
@@ -181,9 +181,9 @@
 <path fill="#e2e8f0" d="M557.9 226.7L555.4 224.9L554.8 223.7L553.2 224.3L551.9 224.1L551.2 224.5L549.9 224.2L548.2 221.9L547.8 221.0L545.8 219.9L545.0 218.2L543.9 217.0L542.0 215.5L542.0 214.6L540.5 213.4L538.6 212.3L539.4 212.0L540.4 211.5L541.1 209.0L541.9 207.7L543.9 207.3L544.3 208.1L545.8 209.7L546.5 209.9L547.5 209.5L549.5 209.6L549.9 210.1L552.7 210.1L552.8 209.6L554.2 209.0L554.5 208.2L555.6 207.6L557.9 209.3L559.3 209.0L560.7 207.0L562.2 205.4L562.0 203.7L561.3 202.9L563.0 202.8L563.2 202.1L564.5 202.3L564.1 204.4L564.5 206.4L565.9 207.5L566.2 208.5L566.2 209.9L566.6 210.0L566.6 212.2L566.2 213.0L564.7 213.1L563.8 214.7L565.5 214.9L566.9 216.3L567.4 217.4L568.6 218.1L570.3 221.1L568.4 223.0L566.7 224.6L565.0 225.9L563.0 225.9L560.8 226.6L559.0 226.0L557.9 226.7Z"/>
 </g>
 <g fill="#2a78d6" fill-opacity="0.85" stroke="#ffffff" stroke-width="2">
-<circle cx="201.4" cy="125.2" r="11.0"><title>United States: 125</title></circle>
+<circle cx="201.4" cy="125.2" r="11.0"><title>United States: 126</title></circle>
 <circle cx="789.4" cy="173.7" r="7.8"><title>Hong Kong: 42</title></circle>
-<circle cx="767.6" cy="145.1" r="6.6"><title>China: 22</title></circle>
+<circle cx="767.6" cy="145.1" r="6.8"><title>China: 25</title></circle>
 <circle cx="499.1" cy="93.1" r="4.8"><title>Germany: 4</title></circle>
 <circle cx="808.0" cy="170.0" r="4.8"><title>Taiwan: 4</title></circle>
 <circle cx="760.6" cy="232.8" r="4.7"><title>Singapore: 3</title></circle>
@@ -198,10 +198,10 @@
 <circle cx="623.8" cy="170.5" r="4.2"><title>United Arab Emirates: 1</title></circle>
 </g>
 <g font-size="12" font-weight="600" fill="#ffffff" stroke="#ffffff" stroke-width="3.5" stroke-linejoin="round">
-<text x="215.4" y="129.7" text-anchor="start">125</text>
+<text x="215.4" y="129.7" text-anchor="start">126</text>
 <text x="778.5" y="178.2" text-anchor="end">42</text>
-<text x="777.3" y="149.6" text-anchor="start">22</text>
-<text x="507.0" y="97.6" text-anchor="start">4</text>
+<text x="777.5" y="149.6" text-anchor="start">25</text>
+<text x="506.9" y="97.6" text-anchor="start">4</text>
 <text x="815.8" y="174.5" text-anchor="start">4</text>
 <text x="768.3" y="237.3" text-anchor="start">3</text>
 <text x="534.0" y="94.7" text-anchor="start">3</text>
@@ -215,10 +215,10 @@
 <text x="630.9" y="175.0" text-anchor="start">1</text>
 </g>
 <g font-size="12" font-weight="600" fill="#0f172a">
-<text x="215.4" y="129.7" text-anchor="start">125</text>
+<text x="215.4" y="129.7" text-anchor="start">126</text>
 <text x="778.5" y="178.2" text-anchor="end">42</text>
-<text x="777.3" y="149.6" text-anchor="start">22</text>
-<text x="507.0" y="97.6" text-anchor="start">4</text>
+<text x="777.5" y="149.6" text-anchor="start">25</text>
+<text x="506.9" y="97.6" text-anchor="start">4</text>
 <text x="815.8" y="174.5" text-anchor="start">4</text>
 <text x="768.3" y="237.3" text-anchor="start">3</text>
 <text x="534.0" y="94.7" text-anchor="start">3</text>
@@ -231,5 +231,5 @@
 <text x="835.3" y="138.6" text-anchor="start">1</text>
 <text x="630.9" y="175.0" text-anchor="start">1</text>
 </g>
-<text x="12" y="422" font-size="13" fill="#64748b"><tspan fill="#0f172a" font-weight="600">216</tspan> visitors from <tspan fill="#0f172a" font-weight="600">15</tspan> countries and regions · dot size = visitors</text>
+<text x="12" y="422" font-size="13" fill="#64748b"><tspan fill="#0f172a" font-weight="600">220</tspan> visitors from <tspan fill="#0f172a" font-weight="600">15</tspan> countries and regions · dot size = visitors</text>
 </svg>
